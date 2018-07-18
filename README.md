@@ -1,4 +1,4 @@
-# go-subscription-crawler :department_store: :clipboard: :credit-card:
+# go-subscription-crawler :department_store: :clipboard: :credit_card:
 Subscription based commerce MVP, hopefully
 - Needed
   - Database to store crawled and scraped products
