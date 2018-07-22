@@ -4,6 +4,10 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/credentials"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/gocolly/colly"
 )
 
@@ -13,6 +17,21 @@ TODO: define a struct to contain the product data and be sent to the MongoDB sto
 */
 
 func main() {
+	sess, err := session.NewSession(&aws.Config{
+		Region:      aws.String("us-west-2"),
+		Credentials: credentials.NewSharedCredentials("/c/Users/안상태/go/src/github.com/ahnsv/colly/.aws/credentials.csv", "ahnsv"),
+	})
+	svc := dynamodb.New(sess)
+	// Test connection
+	req := &dynamodb.DescribeTableInput{
+		TableName: aws.String("url_name"),
+	}
+	result, err := svc.DescribeTable(req)
+	if err != nil {
+		fmt.Printf("%s", err)
+	}
+	table := result.Table
+	fmt.Printf("done", table)
 	// Instantiate default collector
 	c := colly.NewCollector(
 		// Visit only domains: birchbox.com
