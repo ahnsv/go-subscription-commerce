@@ -2,15 +2,21 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/gocolly/colly"
 )
 
+/*
+TODO: define a struct to contain the product data and be sent to the MongoDB storage
+~ 7/24
+*/
+
 func main() {
 	// Instantiate default collector
 	c := colly.NewCollector(
-		// Visit only domains: hackerspaces.org, wiki.hackerspaces.org
-		colly.AllowedDomains("hackerspaces.org", "wiki.hackerspaces.org"),
+		// Visit only domains: birchbox.com
+		colly.AllowedDomains("www.birchbox.com"),
 	)
 
 	// On every a element which has href attribute call callback
@@ -28,6 +34,10 @@ func main() {
 		fmt.Println("Visiting", r.URL.String())
 	})
 
-	// Start scraping on https://hackerspaces.org
-	c.Visit("https://hackerspaces.org/")
+	c.OnError(func(_ *colly.Response, err error) {
+		log.Println("Something went wrong:", err)
+	})
+
+	// Start scraping on birchbox's best sellers
+	c.Visit("https://www.birchbox.com/category/149")
 }
