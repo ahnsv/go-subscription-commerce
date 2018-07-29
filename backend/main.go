@@ -38,7 +38,7 @@ func Index(c *gin.Context) {
 func GetProducts(c *gin.Context) {
 
 }
-func AddProduct(c *gin.Context) {
+func AddProduct(c *gin.Context, product *product) {
 
 }
 func GetProductByID(c *gin.Context) {
