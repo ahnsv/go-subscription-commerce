@@ -1,0 +1,24 @@
+[{
+    "name": "Product A",
+    "url": "github.com",
+    "price": "10000",
+    "image": "https://assets-cdn.github.com/images/spinners/octocat-spinner-64.gif",
+    "availability": true,
+    "subscribable": true
+},
+{
+    "name": "Product B",
+    "url": "naver.com",
+    "price": "20000",
+    "image": "https://assets-cdn.github.com/images/spinners/octocat-spinner-64.gif",
+    "availability": true,
+    "subscribable": true
+},
+{
+    "name": "Product C",
+    "url": "gitlab.com",
+    "price": "10000",
+    "image": "https://assets-cdn.github.com/images/spinners/octocat-spinner-64.gif",
+    "availability": true,
+    "subscribable": true
+}]
