@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import ProductView from "@/components/items/ProductView";
+import ProductView from "./items/ProductView";
 export default {
   name: 'Home',
   components: {
@@ -17,3 +17,6 @@ export default {
   }
 };
 </script>
+<style>
+</style>
+

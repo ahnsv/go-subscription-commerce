@@ -6,13 +6,13 @@ import (
 	"io/ioutil"
 	"log"
 
+	"github.com/ahnsv/go-subscription-commerce/models"
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
-	"github.com/gin-gonic/gin"
 )
 
+type Product = new(models.Product)
 func getProducts() []Product {
 	raw, err := ioutil.ReadFile("./asset/dummy.json")
 	if err != nil {
@@ -44,34 +44,4 @@ func main() {
 		}
 		fmt.Print("successfully added '", product.name)
 	}
-
-	router := gin.Default()
-
-	router.GET("/", Index)
-	router.GET("/products", GetProducts)
-	router.POST("/products", AddProduct)
-	router.GET("/products/:id", GetProductByID)
-	router.PUT("/products/:id", UpdateProduct)
-	router.DELETE("/products/:id", RemoveProduct)
-
-	router.Run()
-}
-
-func Index(c *gin.Context) {
-
-}
-func GetProducts(c *gin.Context) {
-
-}
-func AddProduct(c *gin.Context) {
-
-}
-func GetProductByID(c *gin.Context) {
-
-}
-func UpdateProduct(c *gin.Context) {
-
-}
-func RemoveProduct(c *gin.Context) {
-
 }

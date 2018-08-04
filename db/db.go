@@ -1,8 +1,9 @@
 package db
 
 import (
-	"github.com/aws/aws-sdk-go/aws/credentials"
 	"log"
+
+	"github.com/aws/aws-sdk-go/aws/credentials"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -16,7 +17,7 @@ func Init() {
 	// os.Setenv("AWS_PROFILE", "ahnsv")
 	sess, err := session.NewSession(&aws.Config{
 		Region:      aws.String("us-west-2"),
-		Credentials: credentials.NewSharedCredentials("/Users/rokaf/.aws/credentials.csv", ""),
+		Credentials: credentials.NewSharedCredentials("/Users/안상태/.aws/accessKeys.csv", ""),
 	})
 	if err != nil {
 		log.Fatal(err)

@@ -20,8 +20,8 @@
     </div>
 </template>
 <script>
-import { Sidebar } from "@/components/items/Sidebar";
-import { NavMenu } from "@/components/items/NavMenu";
+import Sidebar from "./Sidebar";
+import NavMenu from "./NavMenu";
 export default {
   name: "NavBar",
   components: {
