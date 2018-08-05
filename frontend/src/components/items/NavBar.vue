@@ -9,8 +9,8 @@
             <button type="submit"></button>
         </form>
     </div>
-    <Sidebar :class="menu" />
-    <NavMenu :class="navmenu" />
+    <Sidebar class="menu" />
+    <NavMenu class="navmenu" />
     <div class="navbar--user">
         <div class="user-cart">
             <i class="fas fa-shopping-cart"></i>
@@ -31,7 +31,15 @@ export default {
 };
 </script>
 <style>
-    .menu {
-        display: hide;
-    }
+.menu {
+  display: hide;
+}
+.navbar--user,
+.navbar--btns {
+  display: -webkit-inline-box;
+  padding: 1rem;
+}
+.navbar--btns a {
+  margin-right: 0.5rem;
+}
 </style>

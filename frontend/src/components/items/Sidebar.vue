@@ -10,11 +10,17 @@
 </template>
 <script>
 export default {
-    name: "Sidebar"
-}
+  name: "Sidebar"
+};
 </script>
 
 <style>
-    
+.menu {
+  position: absolute;
+  left: 0;
+  width: 10rem;
+  height: 100%;
+  display: none;
+}
 </style>
 

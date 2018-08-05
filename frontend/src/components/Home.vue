@@ -18,5 +18,8 @@ export default {
 };
 </script>
 <style>
+.products-view-wrapper {
+    display: inline-flex;
+}
 </style>
 

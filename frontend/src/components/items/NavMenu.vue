@@ -13,3 +13,12 @@ export default {
 }
 
 </script>
+<style scoped>
+.navmenu {
+    display: inline-flex;
+    padding: 1rem;
+}
+.navmenu a {
+    margin-right: 1rem;
+}
+</style>
