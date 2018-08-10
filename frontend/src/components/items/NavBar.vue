@@ -6,7 +6,7 @@
         <a src="#"><i class="fas fa-search"></i></a>
         <form>
             <input type="text">
-            <button type="submit"></button>
+            <button type="submit">Search</button>
         </form>
     </div>
     <Sidebar class="menu" />
@@ -41,5 +41,8 @@ export default {
 }
 .navbar--btns a {
   margin-right: 0.5rem;
+}
+.navbar--btns form {
+    display: none;
 }
 </style>

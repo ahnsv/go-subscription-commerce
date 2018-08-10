@@ -7,12 +7,13 @@ import (
 	"log"
 
 	"github.com/ahnsv/go-subscription-commerce/models"
+	"github.com/ahnsv/go-subscription-commerce/db"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 )
 
-type Product = new(models.Product)
+type Product Product
 func getProducts() []Product {
 	raw, err := ioutil.ReadFile("./asset/dummy.json")
 	if err != nil {
