@@ -1,26 +1,36 @@
 package infrastructure
 
 import (
-	"github.com/gin-conic/gin"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
+
+var router *gin.Engine
 
 func NewRouter() {
 	router := gin.Default()
 
-	router.GET("/", Index)
-	router.GET("/products", GetProducts)
-	router.POST("/products", AddProduct)
-	router.GET("/products/:id", GetProductByID)
-	router.PUT("/products/:id", UpdateProduct)
-	router.DELETE("/products/:id", RemoveProduct)
+	router.LoadHTMLGlob("api/templates/*")
+	router.GET("/", func(c *gin.Context) {
+		c.HTML(
+			http.StatusOK,
+			"index.html",
+			gin.H{
+				"title": "Home Page",
+			},
+		)
+	})
+	// router.GET("/products", GetProducts)
+	// router.POST("/products", AddProduct)
+	// router.GET("/products/:id", GetProductByID)
+	// router.PUT("/products/:id", UpdateProduct)
+	// router.DELETE("/products/:id", RemoveProduct)
 
 	router.Run()
 
 }
 
-func Index(c *gin.Context) {
-
-}
 func GetProducts(c *gin.Context) {
 
 }
